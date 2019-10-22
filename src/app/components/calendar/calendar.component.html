@@ -1,0 +1,36 @@
+<div class="calendar" (swipeleft)="onSwipeLeft($event)" (swiperight)="onSwipeRight($event)">
+  <div class="weekdays">
+    <div class="day">Mon</div>
+    <div class="day">Tue</div>
+    <div class="day">Wen</div>
+    <div class="day">Thu</div>
+    <div class="day">Fri</div>
+    <div class="day dayOff">Sat</div>
+    <div class="day dayOff">Sun</div>
+  </div>
+  <div class="weeks" *ngFor="let week of (dateService.calendar$ | async)">
+    <div class="day plain"
+         *ngFor="let day of week.days"
+         [class.disabled]="day.disabled"
+         [class.dayOff]="day.dayOff"
+         (click)="onSelect(day)"
+    >
+      <div class="circle"
+           [class.selected]="day.selected"
+           [class.active]="day.active"
+      >
+        {{ day.value | moment:'DD' }}
+      </div>
+      <div class="task-container" *ngIf="day.tasks.length > 0">
+        <div class="tasks-present" *ngIf="desktop; else mobile">
+          <div *ngFor="let task of day.tasks | tasksMap">
+            <div class="task">{{task.title | ellipsify}}</div>
+          </div>
+        </div>
+        <ng-template #mobile>
+          <div class="mobile-dot"></div>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</div>

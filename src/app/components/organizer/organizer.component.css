@@ -1,0 +1,60 @@
+section {
+  border: 1px solid #000;
+  padding: 1rem;
+}
+header {
+  margin-bottom: 1rem;
+}
+.task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .5rem 1rem;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: .5rem;
+}
+.btn {
+  display: inline-block;
+  border: none;
+  outline: none;
+  padding: .5rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  color: white;
+}
+.orange-icon{
+  color: #FF4500;
+  cursor: pointer;
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+  transition: background 0.6s;
+}
+
+.btn-primary {
+  background: #FF4500;
+  color: #fff;
+}
+.btn:disabled {
+   background: #cc3600;
+   color: #c7c7c7;
+   cursor: not-allowed;
+}
+.btn:hover:not(:disabled) {
+   opacity: .8;
+}
+ul {
+  list-style: none;
+}
+input {
+  display: block;
+  width: calc(100% - 2px);
+  padding: .4rem 0;
+  font-size: 1.2rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  margin-bottom: .5rem;
+}
