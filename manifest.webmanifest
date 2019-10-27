@@ -1,6 +1,6 @@
 {
-  "name": "ng-organizer",
-  "short_name": "ng-organizer",
+  "name": "pwa-organizer",
+  "short_name": "pwa-organizer",
   "theme_color": "#1976d2",
   "background_color": "#fafafa",
   "display": "standalone",
