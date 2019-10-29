@@ -26,16 +26,16 @@
       }
     }
   ],
-  "dataGroups": [
-    {
-      "name": "organizer-api",
-      "urls": [
-        "/*"
-      ],
-      "cacheConfig": {
-        "strategy": "performance",
-        "maxAge": "1d",
-        "maxSize": 100
-      }
-    }]
+  "dataGroups": [{
+    "name": "api-performance",
+    "urls": [
+      "/*"
+    ],
+    "cacheConfig": {
+      "strategy": "freshness",
+      "maxSize": 100,
+      "maxAge": "31d",
+      "timeout": "1s"
+    }
+  }]
 }
